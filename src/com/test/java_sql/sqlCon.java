@@ -82,7 +82,21 @@ public class sqlCon {
 }
 
 /*
- * OUTPUT
- * 1 henry 12
- * 2 adam 18
+ OUTPUT
+Enter Details:
+[?] Enter id: 
+9
+[?] Enter name: 
+John
+[?] Enter age: 
+26
+1 ad 12
+2 adam 19
+3 henry 22
+4 jack 23
+5 ggg 23
+6 fff 33
+9 John 26
+
+Connection closed.
  */
