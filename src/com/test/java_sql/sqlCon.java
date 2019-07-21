@@ -19,6 +19,7 @@ public class sqlCon {
 
 	public static void main(String[] args) {
 		connectDB();
+		readDB();
 		readInput();
 		readDB();
 		closeDB();
@@ -36,13 +37,13 @@ public class sqlCon {
 		try {
 			prestmt = con.prepareStatement("insert into example values (?, ?, ?)");
 			System.out.println("Enter Details:");
-			System.out.println("[?] Enter id: ");
+			System.out.print("[?] Enter id: ");
 			int id = scan.nextInt();
 			prestmt.setInt(1, id);
-			System.out.println("[?] Enter name: ");                                                                                                
+			System.out.print("[?] Enter name: ");                                                                                                
 			String name = scan.next();
 			prestmt.setString(2, name);
-			System.out.println("[?] Enter age: ");
+			System.out.print("[?] Enter age: ");
 			int age = scan.nextInt();
 			prestmt.setInt(3, age);
 			prestmt.executeUpdate();
@@ -84,12 +85,9 @@ public class sqlCon {
 /*
  OUTPUT
 Enter Details:
-[?] Enter id: 
-9
-[?] Enter name: 
-John
-[?] Enter age: 
-26
+[?] Enter id: 9
+[?] Enter name: John
+[?] Enter age: 26
 1 ad 12
 2 adam 19
 3 henry 22
