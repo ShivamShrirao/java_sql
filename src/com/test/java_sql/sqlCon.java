@@ -22,6 +22,8 @@ public class sqlCon {
 		readDB();
 		readInput();
 		readDB();
+		delID();
+		readDB();
 		closeDB();
 	}
 	private static void connectDB() {
@@ -35,7 +37,7 @@ public class sqlCon {
 	}
 	private static void readInput() {
 		try {
-			// create table exm(id int(10), name varchar(40), age int(3));
+			// create table example(id int(10), name varchar(40), age int(3));
 			prestmt = con.prepareStatement("insert into example values (?, ?, ?)");
 			System.out.println("Enter Details:");
 			System.out.print("[?] Enter id: ");
@@ -47,6 +49,18 @@ public class sqlCon {
 			System.out.print("[?] Enter age: ");
 			int age = scan.nextInt();
 			prestmt.setInt(3, age);
+			prestmt.executeUpdate();
+		} catch (Exception e) {
+	    	System.out.println(e);
+	    }
+	}
+	private static void delID() {
+		try {
+			// create table example(id int(10), name varchar(40), age int(3));
+			prestmt = con.prepareStatement("delete from example where id=?");
+			System.out.print("[?] Enter id to delete: ");
+			int id = scan.nextInt();
+			prestmt.setInt(1, id);
 			prestmt.executeUpdate();
 		} catch (Exception e) {
 	    	System.out.println(e);
