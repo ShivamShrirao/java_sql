@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class sqlCon {
 	final private static String hostname = "127.0.0.1";
 	final private static int port = 3306;
-	final private static String database = "forum";
+	final private static String database = "forum";		// create database forum;
 	final private static String user = "mysql";
 	final private static String pass = "password";
 	
@@ -35,6 +35,7 @@ public class sqlCon {
 	}
 	private static void readInput() {
 		try {
+			// create table exm(id int(10), name varchar(40), age int(3));
 			prestmt = con.prepareStatement("insert into example values (?, ?, ?)");
 			System.out.println("Enter Details:");
 			System.out.print("[?] Enter id: ");
